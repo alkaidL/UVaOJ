@@ -1,2 +1,2 @@
 # UVaOJ
-some accepted code
+record my study
