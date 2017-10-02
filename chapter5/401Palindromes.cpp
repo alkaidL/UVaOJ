@@ -53,7 +53,7 @@ int main()
     char s[25];
     while(scanf("%s", s) == 1)
     {
-        int len = strlen(s) - 1;        //一定要-1否则会算入'\0',前面也有类似的坑
+        int len = strlen(s) - 1;
         int pos = len / 2;
         printf("%s", s);
         if(isPalindrome(s, len, pos))
