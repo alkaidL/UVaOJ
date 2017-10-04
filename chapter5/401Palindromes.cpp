@@ -13,41 +13,34 @@ char reverse(char ch)
 
 int isMirror(char s[], int len, int pos)
 {
-    int flag = 0;
+    int flag = 1;
     while(pos <= len)
     {
-        if(reverse(s[pos]) == s[len-pos])
-        {
-            flag = 1;
-            pos++;
-        }
-        else
+        if(reverse(s[pos]) != s[len-pos])
         {
             flag = 0;
             break;
         }
+        pos++;
     }
     return flag;
 }
 
 int isPalindrome(char s[], int len, int pos)
 {
-    int flag = 0;
+    int flag = 1;
     while(pos <= len)
     {
-        if(s[pos] == s[len-pos])
-        {
-            flag = 1;
-            pos++;
-        }
-        else
+        if(s[pos] != s[len-pos])
         {
             flag = 0;
             break;
         }
+        pos++;
     }
     return flag;
 }
+
 int main()
 {
     char s[25];
