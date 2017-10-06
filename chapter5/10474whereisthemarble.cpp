@@ -23,3 +23,37 @@ int main()
     }
     return 0;
 }
+//vector practice
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+vector<int> v;
+
+int main()
+{
+    int x, n, q, kase = 0;
+    while(cin >> n >> q)
+    {
+        v.clear();
+        if(n == 0)
+            break;
+        cout << "CASE# " << ++kase << ":" << endl;
+        for(int i = 0; i < n; i++)
+        {
+            cin >> x;
+            v.push_back(x);
+        }
+        sort(v.begin(), v.end());
+        for(int i = 0; i < q; i++)
+        {
+           cin >> x;
+           vector<int>::iterator p = find(v.begin(), v.end(), x);
+           if(p != v.end())
+                cout << x << " found at " << p - v.begin() + 1 << endl;
+           else
+                cout << x << " not found" << endl;
+        }
+
+    }
+}
