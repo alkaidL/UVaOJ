@@ -1,3 +1,4 @@
+//算法复杂度只有O(n)，其它实现大部分达到O(n^2)
 #include <stdio.h>
 #include <string.h>
 char s[100], a[100];
@@ -21,13 +22,18 @@ int main()
         int j = 0, count = 0;
         while(a[j] && count < 7)
         {
-            if(flag[a[j]-'a'])
-                flag[a[j]-'a'] = -1;        //标记出现过的匹配字母
-            if(flag[a[j]-'a'] == -1)
+            if(flag[a[j]-'a'] == -1 || flag[a[j]-'a'] == 2)     //多次猜同一个未猜到的字母只算一次错误
             {
                 j++;
                 continue;
             }
+            if(flag[a[j]-'a'] == 1)
+            {
+                flag[a[j]-'a'] = 2;        //标记出现过的匹配字母，方便42行判断
+                continue;
+            }
+            else if(flag[a[j]-'a'] == 0)
+                flag[a[j]-'a'] = -1;        //标记出现过的不匹配字母
             count++;
             j++;
         }
