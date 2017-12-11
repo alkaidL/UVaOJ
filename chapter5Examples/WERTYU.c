@@ -1,5 +1,5 @@
 #include <stdio.h>
-const char *s1 = "`1234567890-=QWERTYUIOP[]\\ASDFGHJKL;'ZXCVBNM,./";   //注意这里\A是转义符，所以要多加一个反斜杠
+const char *s1 = "`1234567890-=QWERTYUIOP[]\\ASDFGHJKL;'ZXCVBNM,./";   //注意这里\要多加一个反斜杠
 int main()
 {
     int i;
