@@ -1,15 +1,14 @@
 #include <iostream>
-#include <string>
+
 using namespace std;
 
-const int maxn = 100;
 string trans(string s)
 {
     string cur;
     for(unsigned int i = 0; i < s.length(); i++)
     {
         int count = 1;
-        while(s[i] == s[i+1] && i != s.length()-1)
+        while(i != s.length()-1 && s[i] == s[i+1])
         {
             count++;
             i++;
@@ -32,6 +31,6 @@ public:
 int main()
 {
     Solution s;
-    cout << s.countAndSay(2);
+    cout << s.countAndSay(5);
     return 0;
 }
