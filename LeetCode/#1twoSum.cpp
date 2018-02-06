@@ -30,3 +30,23 @@ int main()
     cout << ans[0] << " " << ans[1] << endl;
     return 0;
 }
+
+
+//更优解法（9ms），暴力解法需300ms
+/*
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        using vType = remove_reference_t<decltype(nums)>::size_type;
+        unordered_map<int,vType> m ;
+        
+        for (int i = 0; i < nums.size(); ++i) {
+            const auto it = m.find(target - nums[i]);
+            if (it != m.end())
+                    return vector<int> {it->second,i};
+            m.emplace(nums[i],i);
+        }
+        throw std::runtime_error("no solutions:") ;
+    }
+};
+*/
